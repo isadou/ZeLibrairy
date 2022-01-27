@@ -1,10 +1,24 @@
-<h1>Livres dans ma bibliothèque</H1>
-<% @books.each do |book| %>
-	<li><%= book.title %><li>
-	<li><%= book.author %><li>
-	<li><%= book.year %><li>
-	<li><%= book.resume %><li>
-	<li><%= book.price %><li>
-  <%= link_to "Show book", book_path(book) %>
-  <% end %>
-<%= link_to "Back to Home", root_path %>
+<div class = container>
+  <div class = banner1>
+    <h1>Liste des Livres dans Ma Bibliothèque</h1>
+  </div>
+  <% montant = 0 %>
+    <% @books.each do |book| %>
+      <div class = card-trip>
+        <h2>Titre    :  <%= book.title %></h2>
+        <h2>Year     :  <%= book.year %></h2>
+        <h2>Price    :  <%= book.price %>€</h2>
+        <% montant += book.price %>
+        <%= link_to 'book details', book_path(book), class: 'btn btn-gradient' %>
+        <%= link_to 'Edit', edit_book_path(book), class: 'btn btn-gradient' %>
+      </div>
+
+    <% end %>
+
+    <div class = card-choice>
+      <h2> Total prix <%= montant %> €</H2>
+      <%= link_to 'New Book', new_book_path, class: 'btn btn-gradient' %>
+      <%= link_to "Back to Home", root_path, class: 'btn btn-gradient' %>
+      <%= link_to "Know more about us", about_path, class: 'btn btn-gradient' %>
+    </div>
+</div>

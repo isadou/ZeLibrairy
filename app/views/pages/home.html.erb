@@ -1,4 +1,8 @@
-<h1>Ze Librairy</h1>
-<p>Gestion de ma Bibliotèque Personnelle</p>
-<%= link_to "Books List", books_path %>
-<%= link_to "Books create", new_book_path %>
+<div class='banner'>
+  <h1>Je gère Ma Bibilothèque 🚀</h1>
+  <p>Now is <%= Time.now %></p>
+  <%= link_to "Know more about us", about_path, class: 'btn btn-gradient' %>
+  <%= link_to "Meet our team", contact_path, class: 'btn btn-gradient' %>
+  <%= link_to 'New Book', new_book_path, class: 'btn btn-gradient' %>
+  <%= link_to 'book list', books_path, class: 'btn btn-gradient' %>
+</div>

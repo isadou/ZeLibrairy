@@ -1,0 +1,13 @@
+<div class='banner'>
+  <h1>Je gère Ma Bibilothèque 🚀</h1>
+
+  <h2>Meet our team</h2>
+  <ol>
+    <% @members.each do |member| %>
+      <li><%= member.capitalize %></li>
+    <% end %>
+  </ol>
+
+  <%= link_to "Back to Home", root_path %>
+  <%= link_to "Know more about us", about_path %>
+</div>

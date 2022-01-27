@@ -18,30 +18,30 @@ class BooksController < ApplicationController
   def create
     @book = Book.new(book_params)
     if @book.save
-      @book.save
+     redirect_to books_path
     else
-      render "form", book: @book
+      render 'new'
     end
-    redirect_to books_path
   end
 
   def update
     @book = Book.find(params[:id])
     if @book.update(book_params)
-      @book.update(book_params)
+      redirect_to books_path
     else
-      render :edit
-   end
-    redirect_to books_path
-end
+      render 'edit'
+    end
+  end
 
 
   def destroy
+    @book.destroy
+    redirect_to books_path
   end
 
 private
   def set_book
-    @books = Book.find(params[:id])
+    @book = Book.find(params[:id])
   end
 
   def book_params

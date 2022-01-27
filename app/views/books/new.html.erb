@@ -1,1 +1,6 @@
-<%= render "form", book: @book %>
+<div class = container>
+  <div class = card-form>
+    <%= render 'form', book: @book %>
+    <%= link_to 'ne pas enregistrer', books_path, class: 'btn btn-gradient'  %>
+  </div>
+</div>
